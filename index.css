@@ -3,6 +3,14 @@
 {
     background-color: white;
 }
+@media(max-width:768px) 
+{
+  .navbar
+  {
+    width: auto;
+  }
+  
+}
 .food-logo
 {
     height: 80px;
@@ -26,14 +34,10 @@
     font-family: "Roboto";
     
 }
-/* .nav-bar a:hover{
-   text-decoration: underline;
-   transition: width 0.5s ease-in-out;
-} */
-/* #close-icon {
-    
-    display: none;
-} */
+.nav-bar a:hover
+{
+   color: goldenrod;
+}
 /* .navbar-bottomline
 {
     border-bottom: solid 2px;
@@ -110,6 +114,72 @@
     border-color: #330000;
     backdrop-filter: blur(2px);
 }
+
+/* view menu */
+.viewmenu
+{
+  display: none;
+}
+#closemenuBtn {
+  position: absolute;
+  position: fixed;
+  top: -16px;
+  right: 0px;
+  margin-top: 16px;
+  font-size: 20px;
+  background: royalblue;
+  border: solid 1px;
+  cursor: pointer;
+}
+
+.viewmenublock
+{
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+   transform: translate(-50%,-50%);
+  background-color: rgb(255, 255, 255);
+
+  width: 250px;
+  border: dotted 1px black;
+}
+.view-menu-list li
+{
+  list-style-type: none;
+  margin-top: 20px;
+ 
+  
+
+ 
+}
+.view-menu-list li a
+{
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+.view-menu-heading
+{
+  border-bottom: solid 1px;
+  font-size: 24px;
+  color: rgb(255, 255, 255);
+  background-image: linear-gradient( #330000, #ff9900);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  
+}
+#view-menu-icon
+{
+  border: none;
+  margin-left: 15px;
+  color: #330000;
+}
+.view-menu-list li a:hover
+{
+  color: goldenrod;
+}
+
+
 /* order now button form */
 
 .hidden {
@@ -181,9 +251,9 @@ input {
     
 }
 
-input[type="checkbox"] {
+/* input[type="checkbox"] {
     margin-bottom: 10px;
-  }
+  } */
 
 /* #form select,
 #form input {
@@ -547,7 +617,7 @@ font-weight: 300;
       margin-top: -48px;
       height: 200px;
   }
-  .footer-section2 i
+  .footer-section2  #icons1
   {
     color: rgb(255, 179, 3);
     margin-right: 15px;

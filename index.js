@@ -1,3 +1,18 @@
+var togglerButton = document.getElementById('toggler-button');
+var closeIcon = document.getElementById('close-icon');
+
+// Add click event listeners to the buttons
+togglerButton.addEventListener('click', toggleButtons);
+closeIcon.addEventListener('click', toggleButtons);
+
+// Function to toggle the buttons
+function toggleButtons() {
+    // Toggle the innerHTML of the buttons
+    var temp = togglerButton.innerHTML;
+    togglerButton.innerHTML = closeIcon.innerHTML;
+    closeIcon.innerHTML = temp;
+}
+
 // for menu icon action
 function toggleRotation() {
     var menuIcon = document.getElementById('menu-icon');
@@ -18,6 +33,16 @@ function toggler(element) {
         toggleRotation();
     }
 }
+
+//view-menu
+document.getElementById('showmenuBtn').addEventListener('click', function() {
+    document.getElementById('displaymenu').classList.remove('viewmenu');
+  });
+
+  document.getElementById('closemenuBtn').addEventListener('click', function() {
+    document.getElementById('displaymenu').classList.add('viewmenu');
+  });
+
 // order form
 
 document.getElementById('showFormBtn').addEventListener('click', function() {
@@ -28,56 +53,7 @@ document.getElementById('showFormBtn').addEventListener('click', function() {
     document.getElementById('formContainer').classList.add('hidden');
   });
 
-  
-  document.getElementById('submitOrder').addEventListener('click', function () {
-    var isValid = true;
-
-    
-    var selectedCategories = ['VegStarters', 'NonVegStarters', 'Biryani\'s','Salad\'s', 'Dessert\'s', 'Chainese'];
-    var isCategorySelected = false;
-
-    for (var i = 0; i < selectedCategories.length; i++)
-     {
-
-        var category = document.getElementById(selectedCategories[i]).value;
-        console.groupCollapsed("food")
-        console.log(selectedCategories[i])
-        console.log(category)
-        console.groupEnd()
-        if (category !== 'Select item\'s') {
-            isCategorySelected = true;
-            break;
-        }
-    }
-
-    if (!isCategorySelected) {
-        isValid = false;
-        alert('Please select at least one item category.');
-    }
-
-    
-    var address = document.getElementById('address').value;
-    if (!address.trim()) {
-        isValid = false;
-        alert('Please enter your delivery address.');
-    }
-
-   
-    var paymentMethod = document.getElementById('paymentMethod').value;
-    if (paymentMethod === 'Select one option') {
-        isValid = false;
-        alert('Please select your payment option.');
-    }
-
-    
-    if (isValid) {
-        alert('Your order has been taken successfully!');
-      
-    }
-  });
-
-
-
+    // document.getElementById('form').style.display = 'none';
 
 
 
@@ -139,16 +115,16 @@ function mouseout(obj)
 
   //scroll intervel
 // Initialize ScrollReveal
-const sc = ScrollReveal({origin:'top',distance:"40px",duration:2500});
+// const sc = ScrollReveal({origin:'top',distance:"40px",duration:2500});
 
-// Use the reveal method
-sc.reveal(`.why-section-card,.menu-card, .menu-items, .thank-section-img,.thank-section-heading,.thank-section-para,.thank-section-button,.reservation,.about,.address,.Quick .footer-section1-part,.copyright,i,.svgicon`, { interval: 200 });
+// // Use the reveal method
+// sc.reveal(`.why-section-card,.menu-card, .menu-items, .thank-section-img,.thank-section-heading,.thank-section-para,.thank-section-button,.reservation,.about,.address,.Quick .footer-section1-part,.copyright,i,.svgicon`, { interval: 200 });
   
 
-const sc1 = ScrollReveal({origin:'top',distance:"40px",duration:2500});
+// const sc1 = ScrollReveal({origin:'top',distance:"40px",duration:2500});
 
-// Use the reveal method
-sc1.reveal(`.carousel-matter`, { interval: 500 });
+// // Use the reveal method
+// sc1.reveal(`.carousel-matter`, { interval: 500 });
    
 
 

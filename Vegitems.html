@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>MyRestuarant</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- for fonts -->
+    <script src="https://kit.fontawesome.com/12a30455c3.js" crossorigin="anonymous"></script>
+    <!-- arrow link -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0" />
+   <!-- for scrolling interval -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+    
+    <!-- navbar -->
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1705111385/pngtree-restaurant-logo-design-vector-template-image_388753-removebg-preview_nawuis.png" alt="logo" class="food-logo">
+            </a>
+            <button id="toggler-button" class="navbar-toggler"type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+             </button>
+             <button type="button" id="close-icon" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+               <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="nav-links">
+                      <li class="nav-item nav-bar">
+                        <a class="nav-link" href="#">Home</a>
+                      </li>
+                      <li class="nav-item nav-bar">
+                        <a class="nav-link" href="#">About</a>
+                      </li>
+                      <li class="nav-item dropdown nav-bar"  onclick="toggler(this)">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                         Menu<span ><svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                            <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+                          </svg></span></a>
+                         
+                        <ul class="dropdown-menu content">
+                          <li><a class="dropdown-item" href="#">Veg Staters</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Non-veg Staters</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Soups</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Biryani Items</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Dessert's</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Salad's</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Chainese</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item nav-bar ">
+                        <a class="nav-link" href="#">Reservation</a>
+                      </li>
+                      <li class="nav-item nav-bar ">
+                        <a class="nav-link " href="#">Delivery & Payment</a>
+                      </li>
+                      <li class="nav-item nav-bar ">
+                        <a class="nav-link " href="#">Contact Us</a>
+                      </li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- carousel images -->
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner carousel-imgs">
+          <div class="carousel-item active" data-bs-interval="1000">
+            <img src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1706699541/big-img1_fq7oqu.jpg" class="d-block w-100" alt="...">  
+          </div>
+          <div class="carousel-item " data-bs-interval="500">
+            <img src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1705113885/posters_ng9vyd.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="400">
+            <img src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1705126326/unnamed_oub7mq.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="1000">
+            <img src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1706699540/big-img2_qzy3bn.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="500">
+            <img src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1705126308/dissert_yrp2zh.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+         <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button> -->
+    <div class="row carouselcaption text-center d-flex flex-column justify-content-center">
+        <div class="col-12">
+          <h1 class="heading carousel-matter">Get Tasty & Delicious Food Anytime</h1>
+          <p class="para carousel-matter">Eat Smart & Healthy</p>
+          <button class="button1 carousel-matter" id="showmenuBtn">View Menu</button>
+          <button class="button2 carousel-matter" id="showFormBtn">Order Now</button>
+        </div>
+        <!-- view menu form -->
+            
+        
+    <div class="viewmenu" id="displaymenu">
+      <div class="viewmenublock">
+       
+      <h1 class="view-menu-heading">See All my Dishes  <button type="button" id="closemenuBtn" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button></h1>
+     
+      <ul class="view-menu-list">
+        <li><a href="#">Veg Starters<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
+        <li><a href="#">NonVeg Starters<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
+        <li><a href="#">Biryani's<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
+        <li><a href="#">Salada's<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
+        <li><a href="#">Dessert's<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
+        <li><a href="#">Chainese<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
+      </ul>
+    </div>
+  </div>
+
+  
+           <!-- order button click form page -->
+           <div id="formContainer" class="hidden">
+            <div id="form">
+                <button type="button" id="closeFormBtn" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+             
+              <h2>Place Order</h2>
+              <label for="vegStarters" id="VegStarters">Veg Starter's</label>
+              <select id="VegStarters" name="vegStarters">
+                <option disabled selected>Select item's</option>
+                  <option value="vegStarter1">Crispy Corn</option>
+                  <option value="vegStarter2">Veg Shangrilla</option>
+                  <option value="vegStarter3">Veg Mangolian</option>
+                  <option value="vegStarter4">Chilly Baby Corn</option>
+                  <option value="vegStarter5">Panner 65</option>   
+              </select>
+          
+
+              <label for="nonVegStarters" id="NonVegStarters">Non-Veg Starter's</label>
+              <select id="NonVegStarters" name="nonVegStarters">
+                 <option disabled selected>Select item's</option>
+                  <option value="nonVegStarter1">Chicken Tikka</option>
+                  <option value="nonVegStarter2">Kebab</option>
+                  <option value="nonvegStarter3">Chilli chicken</option>
+                  <option value="nonvegStarter4">Tandoori</option>
+                  <option value="nonvegStarter5">Fish Tikka</option>
+                  <option value="nonvegStarter6">Prawn fry</option>
+               </select>
+          
+              <label for="biryani" id="Biryani">Biryani's</label>
+              <select id="Biryani" name="biryani">
+                <option disabled selected>Select item's</option>
+                  <option value="biryani1">Chicken Dum</option>
+                  <option value="biryani2">Mutton Dum</option>
+                  <option value="biryani3">Prawn Biryani</option>
+                  <option value="biryani4">Fish Biryani</option>
+                  <option value="biryani5">Chicken Thandoori</option> 
+              </select>
+
+              <label for="salads" id="Salads">Salad's</label>
+              <select id="Salads" name="salads">
+               <option disabled selected>Select item's</option>
+                 <option value="salad1">Greek salad</option>
+                 <option value="salad2">Cucumber salad</option>
+                 <option value="salad3">Classic potato salad</option>
+                 <option value="salad4">Pasta salad</option>
+                 <option value="salad5">Caesar salad</option>
+              </select>
+   
+              <label for="desserts" id="Desserts">Desserts's</label>
+              <select id="Desserts" name="desserts">
+               <option disabled selected>Select item's</option>
+                 <option value="dessert1">Brownies</option>
+                 <option value="dessert2">puddings</option>
+                 <option value="dessert3">Tiramisu</option>
+                 <option value="dessert4">Apple pie</option>
+                 <option value="dessert5">Coconut Kheer</option>
+               </select>
+               <label for="chainese" id="Chainese">Chainese</label>
+               <select id="Chainese" name="chainese">
+               <option disabled selected>Select item's</option> 
+                  <option value="dessert1">Kung Pao Chicken</option>
+                  <option value="dessert2">Sweet and Sour Pork</option>
+                  <option value="dessert3">Mapo Tofu</option>
+                  <option value="dessert4">Spring Rolles</option>
+                  <option value="dessert5">Wonton</option>
+                </select>
+   
+              <label for="address">Delivery Address</label>
+                <input type="text" id="address" name="address" placeholder="Delivery Address">
+   
+              <label for="paymentMethod" id="paymentMethod">Payment Method</label>
+             <select id="paymentMethod" name="paymentMethod">
+               <option disabled selected>Select one option</option> 
+                 <option value="gpay">GPay</option>
+                 <option value="phonepay">PhonePay</option>
+                 <option value="cod">Cash on Delivery</option>
+             </select>
+     
+     
+             <button id="submitOrder">Submit Order</button>
+            </div>
+        </div>
+        </div>
+        </div>
+
+
+        
+    <!-- menu items -->
+  <div class="menu-section pb-5 pt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="menu-section-heading menu-item-heading">VEG-STARTERS ITEMS</h1>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
+          <div class="menu-section-card shadow p-3">
+            <img class="menu-section-img w-100" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1705126320/samosa_pinwheels_dgo8jl.jpg"  alt=""/>
+            <h1 class="menu-section-card-heading mt-2">Biscuit's</h1>
+            <a href="" class="menu-section-link">See Details<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+            </svg></a>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
+          <div class="menu-section-card shadow p-3">
+            <img class="menu-section-img w-100" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1706720988/bbq-cauliflower-7-696x1024_w8puql.webp"  alt=""/>
+            <h1 class="menu-section-card-heading mt-2">Masala Capsicum</h1>
+            <a href="" class="menu-section-link">See Details<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+            </svg></a>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
+            <div class="menu-section-card shadow p-3">
+              <img class="menu-section-img w-100" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1706721044/Paneer-Tikka-Wide_w1rkjj.jpg"  alt=""/>
+              <h1 class="menu-section-card-heading mt-2">Chilli Garlic Panner </h1>
+              <a href="" class="menu-section-link">See Details<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+              </svg></a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
+            <div class="menu-section-card shadow p-3">
+              <img class="menu-section-img w-100" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1706721166/maxresdefault_lgthrr.jpg"  alt=""/>
+              <h1 class="menu-section-card-heading mt-2">Masala Tikka</h1>
+              <a href="" class="menu-section-link">See Details<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+              </svg></a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
+            <div class="menu-section-card shadow p-3">
+              <img class="menu-section-img w-100" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1706721340/Untitled-design-14.png_pb9rrs.webp"  alt=""/>
+              <h1 class="menu-section-card-heading mt-2">Hara Bhara Kebabs</h1>
+              <a href="" class="menu-section-link">See Details<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+              </svg></a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
+            <div class="menu-section-card shadow p-3">
+              <img class="menu-section-img w-100" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1706721406/cv1mgl58_dhokla_625x300_12_November_20_koboas.jpg"  alt=""/>
+              <h1 class="menu-section-card-heading mt-2">Masala Panner</h1>
+              <a href="" class="menu-section-link">See Details<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+              </svg></a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
+            <div class="menu-section-card shadow p-3">
+              <img class="menu-section-img w-100" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1706721539/PROD_Banner_1664166929432_eliqtr.jpg"  alt=""/>
+              <h1 class="menu-section-card-heading mt-2">Masala Vada</h1>
+              <a href="" class="menu-section-link">See Details<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+              </svg></a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
+            <div class="menu-section-card shadow p-3">
+              <img class="menu-section-img w-100" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1706721825/465433d8cf1dae23e5cc4211052c43e6_wiquvc.jpg"  alt=""/>
+              <h1 class="menu-section-card-heading mt-2">Manchuria</h1>
+              <a href="" class="menu-section-link">See Details<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+              </svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  
+</body>
+</html>
