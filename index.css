@@ -265,7 +265,7 @@ input {
     box-sizing: border-box;
 } */
 
-#submitOrder{
+#submitBtn{
     background-image: linear-gradient(#ff9900,#4d0000);
     color: white;
     padding: 10px;
@@ -367,13 +367,15 @@ font-size: 18px;
 font-weight: 500;
 
 }
-.menu-section-link
-{ 
-color:#330000;
-font-family: "Roboto";
-font-size: 15px;
-font-weight: 300;
-/* text-decoration: none; */
+.menu-section-button
+{
+  color: white;
+    font-family: "Roboto";
+    background-image: linear-gradient(#ff9900,#4d0000);
+    border-radius: 5px;
+    height: 40px;
+    width: 120px;
+    border-width: 0px; 
 }
 
 /* ad-section */
@@ -644,10 +646,4 @@ font-weight: 300;
   }
 
 
-
-
-
   
-  
-
-   

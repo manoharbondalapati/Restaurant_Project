@@ -1,3 +1,61 @@
+function submitOrder(){
+  // event.preventDefault();
+  // alert('you clicked me ')
+
+  const VegStarters = document.forms["submitForm"]["VegStarters"].value;
+  const NonVegStarters = document.forms["submitForm"]["NonVegStarters"].value;
+  const Biryani = document.forms["submitForm"]["Biryani"].value;
+  const Salads = document.forms["submitForm"]["Salads"].value;
+  const Desserts = document.forms["submitForm"]["Desserts"].value;
+  const Chainese= document.forms["submitForm"]["Chainese"].value;
+  const  address = document.forms["submitForm"]["address"].value;
+  const paymentMethod = document.forms["submitForm"]["paymentMethod"].value;
+   
+  if(VegStarters ===`Select items`)
+  {
+    alert('select veg items');
+    return false;
+  }
+  if(NonVegStarters ===`Select items`)
+  {
+    alert('select nonveg items');
+    return false;
+  }
+  if(Biryani ===`Select items`)
+  {
+    alert('select biryani items');
+    return false;
+  }
+  if(Salads ===`Select items`)
+  {
+    alert('select salad items');
+    return false;
+  }
+  if(Desserts ===`Select items`)
+  {
+    alert('select dessert items');
+    return false;
+  }
+  if(Chainese===`Select items`)
+  {
+    alert('select chaninese item')
+  }
+  if( address ==='')
+  {
+    alert('select address');
+    return false;
+  }
+  if(paymentMethod ===`Select one option`)
+  {
+    alert('select payment option');
+    return false;
+  }
+  alert("selected items:\nVeg item: " +VegStarters+"\nNonveg item:"+NonVegStarters+"\nBiryani item: "+Biryani+"\n Salad item:"+Salads+"\n Dessert item:"+Desserts+"\nChainese item:"+Chainese+"your address:"+address+"\n delivered with in 30minutes\n Thank You!!!..");
+  return true;
+
+  
+}
+
 var togglerButton = document.getElementById('toggler-button');
 var closeIcon = document.getElementById('close-icon');
 
@@ -53,9 +111,7 @@ document.getElementById('showFormBtn').addEventListener('click', function() {
     document.getElementById('formContainer').classList.add('hidden');
   });
 
-    // document.getElementById('form').style.display = 'none';
-
-
+  
 
 // reservationform
 
@@ -125,7 +181,6 @@ function mouseout(obj)
 
 // // Use the reveal method
 // sc1.reveal(`.carousel-matter`, { interval: 500 });
-   
-
-
   
+
+
