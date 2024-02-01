@@ -40,7 +40,7 @@
                         <a class="nav-link" href="#">Home</a>
                       </li>
                       <li class="nav-item nav-bar">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#footer">About</a>
                       </li>
                       <li class="nav-item dropdown nav-bar"  onclick="toggler(this)">
                         <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,7 +49,7 @@
                           </svg></span></a>
                          
                         <ul class="dropdown-menu content">
-                          <li><a class="dropdown-item" href="#">Veg Staters</a></li>
+                          <li><a class="dropdown-item" href="./Vegitems.html">Veg Staters</a></li>
                           <li><hr class="dropdown-divider"></li>
                           <li><a class="dropdown-item" href="#">Non-veg Staters</a></li>
                           <li><hr class="dropdown-divider"></li>
@@ -65,13 +65,13 @@
                         </ul>
                       </li>
                       <li class="nav-item nav-bar ">
-                        <a class="nav-link" href="#">Reservation</a>
+                        <a class="nav-link" href="#reserve">Reservation</a>
                       </li>
                       <li class="nav-item nav-bar ">
-                        <a class="nav-link " href="#">Delivery & Payment</a>
+                        <a class="nav-link " href="#reserve">Delivery & Payment</a>
                       </li>
                       <li class="nav-item nav-bar ">
-                        <a class="nav-link " href="#">Contact Us</a>
+                        <a class="nav-link " href="#footer">Contact Us</a>
                       </li>
                       </ul>
                 </div>
@@ -125,9 +125,9 @@
       </button></h1>
      
       <ul class="view-menu-list">
-        <li><a href="#">Veg Starters<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
+        <li><a href="./Vegitems.html">Veg Starters<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
         <li><a href="#">NonVeg Starters<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
-        <li><a href="#">Biryani's<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
+        <li><a href="#">&#128523;Biryani's<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
         <li><a href="#">Salada's<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
         <li><a href="#">Dessert's<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
         <li><a href="#">Chainese<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
@@ -138,7 +138,7 @@
 
         
            <!-- order button click form page -->
-    <form method="post" id="formContainer" class="hidden"onsubmit="submitOrder()"  name="submitForm" >
+    <form  id="formContainer" class="hidden"onsubmit="submitOrder(event)"  name="submitForm" >
         
             <button type="button" id="closeFormBtn" class="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -148,62 +148,62 @@
           <label for="VegStarters" id="VegStarters">Veg Starter's</label>
           <select id="VegStarters" name="VegStarters">
             <option disabled selected>Select items</option>
-              <option value="vegStarter1">Crispy Corn</option>
-              <option value="vegStarter2">Veg Shangrilla</option>
-              <option value="vegStarter3">Veg Mangolian</option>
-              <option value="vegStarter4">Chilly Baby Corn</option>
-              <option value="vegStarter5">Panner 65</option>   
+              <option>Crispy Corn</option>
+              <option>Veg Shangrilla</option>
+              <option>Veg Mangolian</option>
+              <option>Chilly Baby Corn</option>
+              <option>Panner 65</option>   
           </select>
       
           <label for="NonVegStarters" id="NonVegStarters">Non-Veg Starter's</label>
           <select id="NonVegStarters" name="NonVegStarters">
              <option disabled selected>Select items</option>
-              <option value="nonVegStarter1">Chicken Tikka</option>
-              <option value="nonVegStarter2">Kebab</option>
-              <option value="nonvegStarter3">Chilli chicken</option>
-              <option value="nonvegStarter4">Tandoori</option>
-              <option value="nonvegStarter5">Fish Tikka</option>
-              <option value="nonvegStarter6">Prawn fry</option>
+              <option>Chicken Tikka</option>
+              <option>Kebab</option>
+              <option>Chilli chicken</option>
+              <option>Tandoori</option>
+              <option>Fish Tikka</option>
+              <option>Prawn fry</option>
            </select>
       
           <label for="Biryani" id="Biryani">Biryani's</label>
           <select id="Biryani" name="Biryani">
             <option disabled selected>Select items</option>
-              <option value="biryani1">Chicken Dum</option>
-              <option value="biryani2">Mutton Dum</option>
-              <option value="biryani3">Prawn Biryani</option>
-              <option value="biryani4">Fish Biryani</option>
-              <option value="biryani5">Chicken Thandoori</option> 
+              <option>Chicken Dum</option>
+              <option>Mutton Dum</option>
+              <option>Prawn Biryani</option>
+              <option>Fish Biryani</option>
+              <option>Chicken Thandoori</option> 
           </select>
 
            <label for="Salads" id="Salads">Salad's</label>
            <select id="Salads" name="Salads">
             <option disabled selected>Select items</option>
-              <option value="salad1">Greek salad</option>
-              <option value="salad2">Cucumber salad</option>
-              <option value="salad3">Classic potato salad</option>
-              <option value="salad4">Pasta salad</option>
-              <option value="salad5">Caesar salad</option>
+              <option>Greek salad</option>
+              <option>Cucumber salad</option>
+              <option>Classic potato salad</option>
+              <option>Pasta salad</option>
+              <option>Caesar salad</option>
            </select>
 
            <label for="Desserts" id="Desserts">Desserts's</label>
            <select id="Desserts" name="Desserts">
             <option disabled selected>Select items</option>
-              <option value="dessert1">Brownies</option>
-              <option value="dessert2">puddings</option>
-              <option value="dessert3">Tiramisu</option>
-              <option value="dessert4">Apple pie</option>
-              <option value="dessert5">Coconut Kheer</option>
+              <option>Brownies</option>
+              <option>puddings</option>
+              <option>Tiramisu</option>
+              <option>Apple pie</option>
+              <option>Coconut Kheer</option>
             </select>
 
             <label for="Chainese" id="Chainese">Chainese</label>
             <select id="Chainese" name="Chainese">
             <option disabled selected>Select items</option> 
-               <option value="dessert1">Kung Pao Chicken</option>
-               <option value="dessert2">Sweet and Sour Pork</option>
-               <option value="dessert3">Mapo Tofu</option>
-               <option value="dessert4">Spring Rolles</option>
-               <option value="dessert5">Wonton</option>
+               <option>Kung Pao Chicken</option>
+               <option>Sweet and Sour Pork</option>
+               <option>Mapo Tofu</option>
+               <option>Spring Rolles</option>
+               <option>Wonton</option>
              </select>
 
            <label for="address">Delivery Address</label>
@@ -212,9 +212,9 @@
            <label for="paymentMethod" id="paymentMethod">Payment Method</label>
           <select id="paymentMethod" name="paymentMethod">
             <option disabled selected>Select one option</option> 
-              <option value="gpay">GPay</option>
-              <option value="phonepay">PhonePay</option>
-              <option value="cod">Cash on Delivery</option>
+              <option>GPay</option>
+              <option>PhonePay</option>
+              <option>Cash on Delivery</option>
           </select>
   
             <button id="submitBtn" type="submit">Submit Order</button>
@@ -268,7 +268,7 @@
           <div class="menu-section-card shadow p-3">
             <img class="menu-section-img w-100" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1705126320/samosa_pinwheels_dgo8jl.jpg"  alt=""/>
             <h1 class="menu-section-card-heading mt-2">Veg Starters</h1>
-            <a href="" class="menu-section-link">View All<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+            <a href="./Vegitems.html" class="menu-section-link">View All<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
             </svg></a>
           </div>
@@ -363,7 +363,7 @@
 
   <!-- reservation form  -->
 
-  <div class="reservation-section pb-5 pt-5">
+  <div class="reservation-section pb-5 pt-5"b id="reserve">
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-5 order2 order-md-1">
@@ -376,15 +376,15 @@
         <div class="col-12 col-md-7 order-1 order-md-2 reservation">
             <div class=" reservationform" >
             <h1>Find Your Table&#128523;</h1>
-                <form action="#" class="dotted-border">
+                <form action="#" class="dotted-border" id="reset">
                     <input required type="text" id="nameInput" placeholder="Name">
                     <input required type="tel" id="contactInput" placeholder="Contact Number">
                     <input required type="email" id="Email" placeholder="Email Address">
-                    <input required type="date" placeholder="Book Date">
-                    <input required type="time" placeholder="Time">
-                    <input required type="number" placeholder="Number of people">
+                    <input required type="date" id="bookDate" placeholder="Book Date">
+                    <input required type="time" id="bookTime" placeholder="Time">
+                    <input required type="number" id="numberOfPeople" placeholder="Number of people">
                     <textarea name="" id="" cols="10" rows="3" placeholder="Message Request"></textarea>
-                    <button type="button" class="reservation-section-button"  onclick="validateForm()">Book Now</button>
+                    <button type="button"  class="reservation-section-button" onclick="validateForm(event)">Book Now</button>
                 </form>
             </div>          
         </div>
@@ -419,7 +419,7 @@
 
   <!-- footersection 1 -->
 
-  <div class="pb-5 pt-5">
+  <div class="pb-5 pt-5" id="footer">
     <div class="container-fluid">
       <div class="row">
         <div class="col-12 footer-section1">
@@ -467,21 +467,24 @@
  <div class="footer-section2 text-center pb-5 pt-5">
     <div class="container">
       <div class="row">
-        <div class="col-12">
-            <div class="col-12 mt-3">
-                <div class="mr-5">
-                 <i class="fa brands fa-facebook icons" id="icons1"></i>
-                 <i class="fa brands fa-twitter icons" id="icons1"></i>
-                 <i class="fa brands fa-instagram icons" id="icons1"></i>
-                <div class="copyright">
-                    <p>© Asslone4 All Right Reserved.<br><span> THANK YOU VISTI AGAIN </span></p> 
-                  </div>
-                </div>
-        </div>
+          <div class="col-12 d-flex flex-row justify-content-center mt-3">
+            <div class="footer-section2-card mr-5">
+              <i class="fa brands fa-facebook icons"></i>
+            </div>
+            <div class="footer-section2-card mr-5">
+              <i class="fa brands fa-twitter icons"></i>
+            </div>
+            <div class="footer-section2-card mr-5">
+              <i class="fa brands fa-instagram icons"></i>
+            </div>
+            </div>
+               <p class="copyright">© Asslone4 All Right Reserved.<br><span> THANK YOU VISTI AGAIN </span></p> 
+            
       </div>
     </div>
-  </div>
- <div>
+ </div>
+ 
+     
 
 
 

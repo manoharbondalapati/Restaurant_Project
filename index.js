@@ -1,6 +1,6 @@
-function submitOrder(){
-  // event.preventDefault();
-  // alert('you clicked me ')
+function submitOrder(event){
+  event.preventDefault();
+  // document.getElementById('formcontainer').style.display = 'none'
 
   const VegStarters = document.forms["submitForm"]["VegStarters"].value;
   const NonVegStarters = document.forms["submitForm"]["NonVegStarters"].value;
@@ -51,6 +51,8 @@ function submitOrder(){
     return false;
   }
   alert("selected items:\nVeg item: " +VegStarters+"\nNonveg item:"+NonVegStarters+"\nBiryani item: "+Biryani+"\n Salad item:"+Salads+"\n Dessert item:"+Desserts+"\nChainese item:"+Chainese+"your address:"+address+"\n delivered with in 30minutes\n Thank You!!!..");
+  document.getElementById('formContainer').style.display = 'none';
+  
   return true;
 
   
@@ -114,45 +116,75 @@ document.getElementById('showFormBtn').addEventListener('click', function() {
   
 
 // reservationform
+function validateForm(event) {
+  event.preventDefault()
+  
+  // Retrieve values from input fields
+  let name = document.getElementById("nameInput").value;
+  let contact = document.getElementById("contactInput").value;
+  let email = document.getElementById("Email").value;
+  let bookDate = document.getElementById("bookDate").value;
+  let bookTime = document.getElementById("bookTime").value;
+  let numberOfPeople = document.getElementById("numberOfPeople").value;
 
-function validateForm() {
-    // Retrieve values from input fields
-    var name = document.getElementById("nameInput").value;
-    var contact = document.getElementById("contactInput").value;
-    var email = document.getElementById("Email").value;
-   
+  // Validation for the "name" field
+  if (name.trim() === "") {
+      alert("Please enter your name");
+      return;
+  }
 
-    // Validation for the "name" field
-    if (name.trim() === "") {
-        alert("Please enter your name");
-        return;
-    }
+ 
+  if (contact.trim() === "") {
+      alert("Please enter your contact number");
+      return;
+  } else if (!isValidContact(contact)) {
+      alert("Please enter a valid 10-digit contact number");
+      return;
+  }
 
-    
-    if (contact.trim() === "") {
-        alert("Please enter your contact number");
-        return;
-    }
+ 
+  if (email.trim() === "") {
+      alert("Please enter your email address");
+      return;
+  } else if (!isValidEmail(email)) {
+      alert("Please enter a valid email address");
+      return;
+  }
 
-    
-    if (email.trim() === "") {
-        alert("Please enter your email address");
-        return;
-    } else if (!isValidEmail(email)) {
-        alert("Please enter a valid email address");
-        return;
-    }
+  
+  if (bookDate.trim() === "") {
+      alert("Please select a booking date");
+      return;
+  }
 
-   
-   
-    alert("Form submitted successfully!");
+ 
+  if (bookTime.trim() === "") {
+      alert("Please select a booking time");
+      return;
+  }
+
+ 
+  if (numberOfPeople.trim() === "" || isNaN(numberOfPeople) || parseInt(numberOfPeople) <= 0) {
+      alert("Please enter a valid number of people (a positive integer)");
+      return;
+  }
+
+  alert("Your table booked successfully!");
+ document.getElementById('reset').reset();
+}
+
+// Helper functions for contact and email validation (same as before)...
+
+function isValidContact(contact) {
+  var contactRegex = /^\d{10}$/;
+  return contactRegex.test(contact);
 }
 
 function isValidEmail(email) {
-    
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
 }
+
 
 // gift vocher
 function showVoucher() {

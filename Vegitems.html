@@ -40,7 +40,7 @@
                         <a class="nav-link" href="#">Home</a>
                       </li>
                       <li class="nav-item nav-bar">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#footer">About</a>
                       </li>
                       <li class="nav-item dropdown nav-bar"  onclick="toggler(this)">
                         <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -65,13 +65,13 @@
                         </ul>
                       </li>
                       <li class="nav-item nav-bar ">
-                        <a class="nav-link" href="#">Reservation</a>
+                        <a class="nav-link" href="#reserve">Reservation</a>
                       </li>
                       <li class="nav-item nav-bar ">
-                        <a class="nav-link " href="#">Delivery & Payment</a>
+                        <a class="nav-link " href="#reserve">Delivery & Payment</a>
                       </li>
                       <li class="nav-item nav-bar ">
-                        <a class="nav-link " href="#">Contact Us</a>
+                        <a class="nav-link " href="#footer">Contact Us</a>
                       </li>
                       </ul>
                 </div>
@@ -127,7 +127,7 @@
       <ul class="view-menu-list">
         <li><a href="#">Veg Starters<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
         <li><a href="#">NonVeg Starters<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
-        <li><a href="#">Biryani's<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
+        <li><a href="#">&#128523;Biryani's<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
         <li><a href="#">Salada's<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
         <li><a href="#">Dessert's<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
         <li><a href="#">Chainese<i id="view-menu-icon" class="bi bi-arrow-right-circle"></i></a></li>
@@ -136,94 +136,91 @@
   </div>
 
   
-           <!-- order button click form page -->
-           <div id="formContainer" class="hidden">
-            <div id="form">
-                <button type="button" id="closeFormBtn" class="close" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-             
-              <h2>Place Order</h2>
-              <label for="vegStarters" id="VegStarters">Veg Starter's</label>
-              <select id="VegStarters" name="vegStarters">
-                <option disabled selected>Select item's</option>
-                  <option value="vegStarter1">Crispy Corn</option>
-                  <option value="vegStarter2">Veg Shangrilla</option>
-                  <option value="vegStarter3">Veg Mangolian</option>
-                  <option value="vegStarter4">Chilly Baby Corn</option>
-                  <option value="vegStarter5">Panner 65</option>   
-              </select>
-          
-
-              <label for="nonVegStarters" id="NonVegStarters">Non-Veg Starter's</label>
-              <select id="NonVegStarters" name="nonVegStarters">
-                 <option disabled selected>Select item's</option>
-                  <option value="nonVegStarter1">Chicken Tikka</option>
-                  <option value="nonVegStarter2">Kebab</option>
-                  <option value="nonvegStarter3">Chilli chicken</option>
-                  <option value="nonvegStarter4">Tandoori</option>
-                  <option value="nonvegStarter5">Fish Tikka</option>
-                  <option value="nonvegStarter6">Prawn fry</option>
-               </select>
-          
-              <label for="biryani" id="Biryani">Biryani's</label>
-              <select id="Biryani" name="biryani">
-                <option disabled selected>Select item's</option>
-                  <option value="biryani1">Chicken Dum</option>
-                  <option value="biryani2">Mutton Dum</option>
-                  <option value="biryani3">Prawn Biryani</option>
-                  <option value="biryani4">Fish Biryani</option>
-                  <option value="biryani5">Chicken Thandoori</option> 
-              </select>
-
-              <label for="salads" id="Salads">Salad's</label>
-              <select id="Salads" name="salads">
-               <option disabled selected>Select item's</option>
-                 <option value="salad1">Greek salad</option>
-                 <option value="salad2">Cucumber salad</option>
-                 <option value="salad3">Classic potato salad</option>
-                 <option value="salad4">Pasta salad</option>
-                 <option value="salad5">Caesar salad</option>
-              </select>
+            <!-- order button click form page -->
+    <form  id="formContainer" class="hidden"onsubmit="submitOrder(event)"  name="submitForm" >
+        
+      <button type="button" id="closeFormBtn" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
    
-              <label for="desserts" id="Desserts">Desserts's</label>
-              <select id="Desserts" name="desserts">
-               <option disabled selected>Select item's</option>
-                 <option value="dessert1">Brownies</option>
-                 <option value="dessert2">puddings</option>
-                 <option value="dessert3">Tiramisu</option>
-                 <option value="dessert4">Apple pie</option>
-                 <option value="dessert5">Coconut Kheer</option>
-               </select>
-               <label for="chainese" id="Chainese">Chainese</label>
-               <select id="Chainese" name="chainese">
-               <option disabled selected>Select item's</option> 
-                  <option value="dessert1">Kung Pao Chicken</option>
-                  <option value="dessert2">Sweet and Sour Pork</option>
-                  <option value="dessert3">Mapo Tofu</option>
-                  <option value="dessert4">Spring Rolles</option>
-                  <option value="dessert5">Wonton</option>
-                </select>
-   
-              <label for="address">Delivery Address</label>
-                <input type="text" id="address" name="address" placeholder="Delivery Address">
-   
-              <label for="paymentMethod" id="paymentMethod">Payment Method</label>
-             <select id="paymentMethod" name="paymentMethod">
-               <option disabled selected>Select one option</option> 
-                 <option value="gpay">GPay</option>
-                 <option value="phonepay">PhonePay</option>
-                 <option value="cod">Cash on Delivery</option>
-             </select>
-     
-     
-             <button id="submitOrder">Submit Order</button>
-            </div>
-        </div>
-        </div>
-        </div>
+    <h2>Place Order</h2>
+    <label for="VegStarters" id="VegStarters">Veg Starter's</label>
+    <select id="VegStarters" name="VegStarters">
+      <option disabled selected>Select items</option>
+        <option>Crispy Corn</option>
+        <option>Veg Shangrilla</option>
+        <option>Veg Mangolian</option>
+        <option>Chilly Baby Corn</option>
+        <option>Panner 65</option>   
+    </select>
 
+    <label for="NonVegStarters" id="NonVegStarters">Non-Veg Starter's</label>
+    <select id="NonVegStarters" name="NonVegStarters">
+       <option disabled selected>Select items</option>
+        <option>Chicken Tikka</option>
+        <option>Kebab</option>
+        <option>Chilli chicken</option>
+        <option>Tandoori</option>
+        <option>Fish Tikka</option>
+        <option>Prawn fry</option>
+     </select>
 
+    <label for="Biryani" id="Biryani">Biryani's</label>
+    <select id="Biryani" name="Biryani">
+      <option disabled selected>Select items</option>
+        <option>Chicken Dum</option>
+        <option>Mutton Dum</option>
+        <option>Prawn Biryani</option>
+        <option>Fish Biryani</option>
+        <option>Chicken Thandoori</option> 
+    </select>
+
+     <label for="Salads" id="Salads">Salad's</label>
+     <select id="Salads" name="Salads">
+      <option disabled selected>Select items</option>
+        <option>Greek salad</option>
+        <option>Cucumber salad</option>
+        <option>Classic potato salad</option>
+        <option>Pasta salad</option>
+        <option>Caesar salad</option>
+     </select>
+
+     <label for="Desserts" id="Desserts">Desserts's</label>
+     <select id="Desserts" name="Desserts">
+      <option disabled selected>Select items</option>
+        <option>Brownies</option>
+        <option>puddings</option>
+        <option>Tiramisu</option>
+        <option>Apple pie</option>
+        <option>Coconut Kheer</option>
+      </select>
+
+      <label for="Chainese" id="Chainese">Chainese</label>
+      <select id="Chainese" name="Chainese">
+      <option disabled selected>Select items</option> 
+         <option>Kung Pao Chicken</option>
+         <option>Sweet and Sour Pork</option>
+         <option>Mapo Tofu</option>
+         <option>Spring Rolles</option>
+         <option>Wonton</option>
+       </select>
+
+     <label for="address">Delivery Address</label>
+       <input type="text" id="address" name="address" placeholder="Delivery Address">
+
+     <label for="paymentMethod" id="paymentMethod">Payment Method</label>
+    <select id="paymentMethod" name="paymentMethod">
+      <option disabled selected>Select one option</option> 
+        <option>GPay</option>
+        <option>PhonePay</option>
+        <option>Cash on Delivery</option>
+    </select>
+
+      <button id="submitBtn" type="submit">Submit Order</button>
+ 
+</form>
+</div>
+</div>
         
     <!-- menu items -->
   <div class="menu-section pb-5 pt-5">
@@ -238,7 +235,7 @@
             <h1 class="menu-section-card-heading mt-2">Biscuit's</h1>
             <p class="menu-section-card-para">A small quick bread usually made from flour, salt, and butter or vegetable shortening, with baking powder as a leavening agent. </p>
             <p class="menu-section-card-price">Price:<del>  200$</del><Span>  $200</Span></p>
-            <button class="menu-section-button" id="biscuits">Order Now</button>
+            <button class="menu-section-button" id="showFormBtn">Order Now</button>
           </div>
         </div>
          <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
@@ -246,8 +243,8 @@
             <img class="menu-section-img w-100" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1706720988/bbq-cauliflower-7-696x1024_w8puql.webp"  alt=""/>
             <h1 class="menu-section-card-heading mt-2">Masala Capsicum</h1>
             <p class="menu-section-card-para">A small quick bread usually made from flour, salt, and butter or vegetable shortening, with baking powder as a leavening agent. </p>
-            <p class="menu-section-card-price">Price:<del>  200$</del><Span>  $200</Span></p>
-            <button class="menu-section-button" id="biscuits">Order Now</button>
+            <p class="menu-section-card-price">Price:<del>  250$</del><Span>  $200</Span></p>
+            <button class="menu-section-button" id="showFormBtn">Order Now</button>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
@@ -255,8 +252,8 @@
               <img class="menu-section-img w-100" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1706721044/Paneer-Tikka-Wide_w1rkjj.jpg"  alt=""/>
               <h1 class="menu-section-card-heading mt-2">Chilli Garlic Panner </h1>
               <p class="menu-section-card-para">A small quick bread usually made from flour, salt, and butter or vegetable shortening, with baking powder as a leavening agent. </p>
-            <p class="menu-section-card-price">Price:<del>  200$</del><Span>  $200</Span></p>
-            <button class="menu-section-button" id="biscuits">Order Now</button>
+            <p class="menu-section-card-price">Price:<del>  300$</del><Span>  $299</Span></p>
+            <button class="menu-section-button" id="showFormBtn">Order Now</button>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
@@ -265,7 +262,7 @@
               <h1 class="menu-section-card-heading mt-2">Masala Tikka</h1>
               <p class="menu-section-card-para">A small quick bread usually made from flour, salt, and butter or vegetable shortening, with baking powder as a leavening agent. </p>
             <p class="menu-section-card-price">Price:<del>  200$</del><Span>  $200</Span></p>
-            <button class="menu-section-button" id="biscuits">Order Now</button>
+            <button class="menu-section-button" id="showFormBtn">Order Now</button>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
@@ -273,8 +270,8 @@
               <img class="menu-section-img w-100" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1706721340/Untitled-design-14.png_pb9rrs.webp"  alt=""/>
               <h1 class="menu-section-card-heading mt-2">Hara Bhara Kebabs</h1>
               <p class="menu-section-card-para">A small quick bread usually made from flour, salt, and butter or vegetable shortening, with baking powder as a leavening agent. </p>
-              <p class="menu-section-card-price">Price:<del>  200$</del><Span>  $200</Span></p>
-              <button class="menu-section-button" id="biscuits">Order Now</button>
+              <p class="menu-section-card-price">Price:<del>  10$</del><Span>  $5</Span></p>
+              <button class="menu-section-button" id="showFormBtn">Order Now</button>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
@@ -283,7 +280,7 @@
               <h1 class="menu-section-card-heading mt-2">Masala Panner</h1>
               <p class="menu-section-card-para">A small quick bread usually made from flour, salt, and butter or vegetable shortening, with baking powder as a leavening agent. </p>
             <p class="menu-section-card-price">Price:<del>  400$</del><Span>  $300</Span></p>
-            <button class="menu-section-button" id="biscuits">Order Now</button>
+            <button class="menu-section-button" id="showFormBtn">Order Now</button>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
@@ -292,7 +289,7 @@
               <h1 class="menu-section-card-heading mt-2">Masala Vada</h1>
               <p class="menu-section-card-para">A small quick bread usually made from flour, salt, and butter or vegetable shortening, with baking powder as a leavening agent. </p>
             <p class="menu-section-card-price">Price:<del>  150$</del><Span>  $100</Span></p>
-            <button class="menu-section-button" id="biscuits">Order Now</button>
+            <button class="menu-section-button" id="showFormBtn">Order Now</button>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
@@ -301,16 +298,140 @@
               <h1 class="menu-section-card-heading mt-2">Manchuria</h1>
               <p class="menu-section-card-para">A small quick bread usually made from flour, salt, and butter or vegetable shortening, with baking powder as a leavening agent. </p>
             <p class="menu-section-card-price">Price:<del>  100$</del><Span>  $20</Span></p>
-            <button class="menu-section-button" id="biscuits">Order Now</button>
+            <button class="menu-section-button" id="showFormBtn">Order Now</button>
             </div>
           </div>
         </div>
       </div>
     </div>
 
+     <!-- payment section-->
+     
+     <div class="payment-section pb-5 pt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-5 order1 order-md-2">
+            <div class="text-center">
+              <img class="payment-section-img w-100" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1705132446/offer_dkormc.jpg" alt=""/>
+            </div>
+          </div>
+          <div class="col-12 col-md-7 order-2 order-md-1">
+            <h1 class="payment-section-heading">Delivery & Payment</h1>
+            <p class="payment-section-para">Enjoy hassle-free payment with the plenitude of payment options
+              available for you. Get live tracking and locate your food on a
+              live map. It's quite a sight to see your food arrive to your door.
+              Plus, you get a 5% discount on every order every time you pay 
+              online.</p>
+            <button class="payment-section-button">Order Now</button>
+            <div class="d-flex flex-row">
+              <img class="transaction-section-img mt-3 mr-3" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1705133247/upi_s8q9fp.png" alt=""/>
+              <img class="transaction-section-img mt-3 mr-3" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1705133302/MasterCard_Logo.svg_gyfvkw.png" alt=""/>
+              <img class="transaction-section-img mt-3 mr-3" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1705133247/visa_iymbh8.png" alt=""/>
+              <img class="transaction-section-img mt-3 mr-3" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1705133283/paypol_fjfxf5.png" alt=""/>
+              <img class="transaction-section-img mt-3 mr-3" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1705133264/american_nc5dd7.jpg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thank-section pt-5 pb-5">
+      <div class="container">
+       <div class="row">
+        <div class="col-12 col-md-7">
+          <h1 class="thank-section-heading">Thank you for being a valuable customer to us.</h1>
+          <p class="thank-section-para">We have a suprise gift for You</p>
+          <div>
+              <img class="thank-section-img" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1705137188/thanks_xsetbp.png" alt=""/>
+          </div> 
+        <button type="button" class="thank-section-button" onmouseover="mouseout(this)" onclick="showVoucher()">Redeem Gift</button>
+        <div id="voucher" class="voucher-container">
+          <button type="button" id="closeFormButton" onclick="hideVoucher()" class="close" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          <div class="voucher-content">
+            <h1>Gift Vocher</h1>
+  
+            <img src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1706578932/gift-voucher-img_innhlo.png" alt="" height="200px" width="350px">
+           </div>
+           </div>
+       </div>
+      </div>
+    </div>
+  </div>
+  
+
+<!-- footersection 1 -->
+    
+  <div class="pb-5 pt-5" id="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 footer-section1">
+          <div class="footer-section1-part about">
+            <h3>About</h3>
+            <p>We provided the tasty food ,Say no to harmful chemicals and go fully organic
+            with our range of fresh fruits and veggies. Pamper your body and your senses with the true 
+            and unadulterated gifts from mother nature. with the true and 
+            unadulterated gifts from mother nature.</p>
+           </div>
+          <div class="footer-section1-part">
+            <h3>Menu Links</h3>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#Reservation">Reservation</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </div>
+        <div class="footer-section1-part Quick">
+            <h3>Quick Links</h3>
+            <li><a href="#Contact">Contact</a></li>
+            <li><a href="#Privacy Policy">Privacy Policy</a></li>
+            <li><a href="#Disclaimer">Disclaimer</a></li>
+            <li><a href="#Terms Of Use">Terms Of Use</a></li>
+        </div>
+        <div class="footer-section1-part address">
+            <h3>Contact</h3>
+           <a> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt"  class="svgicon" viewBox="0 0 16 16">
+              <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+              <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+            </svg><span>005, Lorem ipsum dolor, sit amet consectetur, India</span></a>
+           <a> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone"  class="svgicon" viewBox="0 0 16 16">
+              <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+            </svg><span>+91 000 999 5555</span></a>
+            <a><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-envelope" class="svgicon" viewBox="0 0 16 16">
+              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+            </svg><span>restaurentfood@gmail.com</span></i></a>
+        </div>
+      </div>
+    </div>
+   </div>
+  </div>
+  
+ <!-- footer-section2 -->
+ <div class="footer-section2 text-center pb-5 pt-5">
+  <div class="container">
+    <div class="row">
+        <div class="col-12 d-flex flex-row justify-content-center mt-3">
+          <div class="footer-section2-card mr-5">
+            <i class="fa brands fa-facebook icons"></i>
+          </div>
+          <div class="footer-section2-card mr-5">
+            <i class="fa brands fa-twitter icons"></i>
+          </div>
+          <div class="footer-section2-card mr-5">
+            <i class="fa brands fa-instagram icons"></i>
+          </div>
+          </div>
+             <p class="copyright">© Asslone4 All Right Reserved.<br><span> THANK YOU VISTI AGAIN </span></p> 
+          
+    </div>
+  </div>
+</div>
+
+   
 
 
-    <!-- cards display -->
+
 
    
 
