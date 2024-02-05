@@ -203,16 +203,16 @@ function mouseout(obj)
 
   //scroll intervel
 // Initialize ScrollReveal
-// const sc = ScrollReveal({origin:'top',distance:"40px",duration:2500});
+const sc = ScrollReveal({origin:'top',distance:"40px",duration:2500});
 
-// // Use the reveal method
-// sc.reveal(`.why-section-card,.menu-card, .menu-items, .thank-section-img,.thank-section-heading,.thank-section-para,.thank-section-button,.reservation,.about,.address,.Quick .footer-section1-part,.copyright,i,.svgicon`, { interval: 200 });
+// Use the reveal method
+sc.reveal(`.why-section-card,.menu-card, .menu-items, .thank-section-img,.thank-section-heading,.thank-section-para,.thank-section-button,.reservation,.about,.address,.Quick .footer-section1-part,.copyright,i,.svgicon`, { interval: 200 });
   
 
-// const sc1 = ScrollReveal({origin:'top',distance:"40px",duration:2500});
+const sc1 = ScrollReveal({origin:'top',distance:"40px",duration:2500});
 
-// // Use the reveal method
-// sc1.reveal(`.carousel-matter`, { interval: 500 });
+// Use the reveal method
+sc1.reveal(`.carousel-matter`, { interval: 500 });
   
 
 
