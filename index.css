@@ -579,8 +579,8 @@ font-weight: 500;
     /* margin-top: 10px; */
     color: #959ead;
     width: 300px;
-    height: 100px;
-    overflow-y: scroll;
+    height: 200px;
+    /* overflow-y: scroll; */
     /* font-weight: bold; */
   }
 
