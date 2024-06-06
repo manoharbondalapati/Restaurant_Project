@@ -214,5 +214,37 @@ const sc1 = ScrollReveal({origin:'top',distance:"40px",duration:2500});
 // Use the reveal method
 sc1.reveal(`.carousel-matter`, { interval: 500 });
   
+//payment
 
+document.addEventListener("DOMContentLoaded", function() {
+  // Initialize Stripe
+  const stripe = Stripe('pk_test_51PKx8QSJqtr5veewViq9KUGKAq7YkAzpltvEP5YHpViyLssL1RJEZysyxxHRqpxXeSM6ObmCYOpSBM2nDk1I2Iy400r1UwxMJB'); // Replace with your Stripe publishable key
 
+  const buttons = document.getElementsByClassName('menu-section-button');
+  for (let button of buttons) {
+      button.addEventListener('click', async () => {
+          try {
+              const response = await fetch('http://localhost:4242/create-checkout-session', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                  },
+              });
+
+              const session = await response.json();
+              const result = await stripe.redirectToCheckout({ sessionId: session.id });
+
+              if (result.error) {
+                  alert(result.error.message);
+              }
+          } catch (error) {
+              console.error('Error:', error);
+          }
+      });
+  }
+
+  // Success page handling
+  if (window.location.pathname === 'https://www.linkedin.com/feed/') {
+      alert('Order placed successfully!');
+  }
+});
