@@ -225,7 +225,7 @@ sc1.reveal(`.carousel-matter`, { interval: 500 });
 //payment
 document.querySelectorAll('.menu-section-button').forEach(button => {
   button.addEventListener('click', async () => {
-    const response = await fetch('http://localhost:8080/create-checkout-session', {
+    const response = await fetch('https://restaurant-project-26gr.onrender.com/create-checkout-session', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
