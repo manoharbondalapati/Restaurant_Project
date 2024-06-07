@@ -250,8 +250,8 @@ document.querySelectorAll('.menu-section-button').forEach(button => {
 const urlParams = new URLSearchParams(window.location.search);
 if (urlParams.has('success')) {
   Swal.fire({
-    title: 'Good job!',
-    text: 'Order Placed Successfully',
+    title: 'Order Placed!',
+    text: 'Payment Success',
     icon: 'success'
   });
 } else if (urlParams.has('cancel')) {
