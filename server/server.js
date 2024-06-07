@@ -26,8 +26,8 @@ app.post('/create-checkout-session', async (req, res) => {
         },
       ],
       mode: 'payment',
-      success_url: 'http://127.0.0.1:5500/index.html?success=true',
-      cancel_url: 'http://127.0.0.1:5500/index.html?cancel=true',
+      success_url: ' https://manoharbondalapati.github.io/Restaurant_Project/index.html?success=true',
+      cancel_url: ' https://manoharbondalapati.github.io/Restaurant_Project/index.html?cancel=true',
     });
 
     res.json({ id: session.id });
