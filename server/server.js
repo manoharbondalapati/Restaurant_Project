@@ -16,20 +16,18 @@ app.post('/create-checkout-session', async (req, res) => {
       line_items: [
         {
           price_data: {
-            currency: 'usd',
+            currency: 'inr',
             product_data: {
               name: 'Manchuria',
             },
-            unit_amount: 2000, // Price in cents
+            unit_amount: 2000, // Price in paisa (INR)
           },
           quantity: 1,
         },
       ],
       mode: 'payment',
-    
-success_url: 'http://localhost:3000/https://www.linkedin.com/feed/',
-cancel_url: 'http://localhost:3000/https://www.facebook.com/',
-
+      success_url: 'http://127.0.0.1:5500/index.html?success=true',
+      cancel_url: 'http://127.0.0.1:5500/index.html?cancel=true',
     });
 
     res.json({ id: session.id });
@@ -38,8 +36,4 @@ cancel_url: 'http://localhost:3000/https://www.facebook.com/',
   }
 });
 
-app.listen(4242, () => console.log('Server running on port 4242'));
-
-
-
-
+app.listen(8080, () => console.log('Server running on port 8080'));

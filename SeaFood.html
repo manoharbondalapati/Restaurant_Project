@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0" />
    <!-- for scrolling interval -->
     <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
     <h1>fhg</h1>
@@ -68,7 +70,7 @@
                         <a class="nav-link" href="#reserve">Reservation</a>
                       </li>
                       <li class="nav-item nav-bar ">
-                        <a class="nav-link " href="#reserve">Delivery & Payment</a>
+                        <a class="nav-link " href="#menu-section-container">Delivery & Payment</a>
                       </li>
                       <li class="nav-item nav-bar ">
                         <a class="nav-link " href="#footer">Contact Us</a>
@@ -223,7 +225,7 @@
 </div>
         
     <!-- menu items -->
-  <div class="menu-section pb-5 pt-5">
+  <div class="menu-section pb-5 pt-5" id="menu-section-container">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -235,7 +237,7 @@
             <h1 class="menu-section-card-heading mt-2">Combo Pack</h1>
             <p class="menu-section-card-para">A small quick bread usually made from flour, salt, and butter or vegetable shortening, with baking powder as a leavening agent. </p>
             <p class="menu-section-card-price">Price:<del>  200$</del><Span>  $200</Span></p>
-            <button class="menu-section-button" id="showFormBtn">Order Now</button>
+            <button class="menu-section-button">Order Now</button>
           </div>
         </div>
          <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
@@ -244,7 +246,7 @@
             <h1 class="menu-section-card-heading mt-2">Latin Fish</h1>
             <p class="menu-section-card-para">A small quick bread usually made from flour, salt, and butter or vegetable shortening, with baking powder as a leavening agent. </p>
             <p class="menu-section-card-price">Price:<del>  250$</del><Span>  $200</Span></p>
-            <button class="menu-section-button" id="showFormBtn">Order Now</button>
+            <button class="menu-section-button">Order Now</button>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
@@ -253,7 +255,7 @@
               <h1 class="menu-section-card-heading mt-2">Prawn Curry</h1>
               <p class="menu-section-card-para">A small quick bread usually made from flour, salt, and butter or vegetable shortening, with baking powder as a leavening agent. </p>
             <p class="menu-section-card-price">Price:<del>  300$</del><Span>  $299</Span></p>
-            <button class="menu-section-button" id="showFormBtn">Order Now</button>
+            <button class="menu-section-button">Order Now</button>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
@@ -262,7 +264,7 @@
               <h1 class="menu-section-card-heading mt-2">Fish Curry</h1>
               <p class="menu-section-card-para">A small quick bread usually made from flour, salt, and butter or vegetable shortening, with baking powder as a leavening agent. </p>
             <p class="menu-section-card-price">Price:<del>  200$</del><Span>  $200</Span></p>
-            <button class="menu-section-button" id="showFormBtn">Order Now</button>
+            <button class="menu-section-button">Order Now</button>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
@@ -271,7 +273,7 @@
               <h1 class="menu-section-card-heading mt-2">Pulasa</h1>
               <p class="menu-section-card-para">A small quick bread usually made from flour, salt, and butter or vegetable shortening, with baking powder as a leavening agent. </p>
               <p class="menu-section-card-price">Price:<del>  10$</del><Span>  $5</Span></p>
-              <button class="menu-section-button" id="showFormBtn">Order Now</button>
+              <button class="menu-section-button">Order Now</button>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
@@ -280,7 +282,7 @@
               <h1 class="menu-section-card-heading mt-2">Prawn Biryani</h1>
               <p class="menu-section-card-para">A small quick bread usually made from flour, salt, and butter or vegetable shortening, with baking powder as a leavening agent. </p>
             <p class="menu-section-card-price">Price:<del>  400$</del><Span>  $300</Span></p>
-            <button class="menu-section-button" id="showFormBtn">Order Now</button>
+            <button class="menu-section-button">Order Now</button>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
@@ -289,7 +291,7 @@
               <h1 class="menu-section-card-heading mt-2">Fish Biryani</h1>
               <p class="menu-section-card-para">A small quick bread usually made from flour, salt, and butter or vegetable shortening, with baking powder as a leavening agent. </p>
             <p class="menu-section-card-price">Price:<del>  1000$</del><Span>  $500</Span></p>
-            <button class="menu-section-button" id="showFormBtn">Order Now</button>
+            <button class="menu-section-button">Order Now</button>
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-4 col-xl-3 menu-items">
@@ -298,38 +300,38 @@
               <h1 class="menu-section-card-heading mt-2">Fish Fry</h1>
               <p class="menu-section-card-para">A small quick bread usually made from flour, salt, and butter or vegetable shortening, with baking powder as a leavening agent. </p>
             <p class="menu-section-card-price">Price:<del>  100$</del><Span>  $20</Span></p>
-            <button class="menu-section-button" id="showFormBtn">Order Now</button>
+            <button class="menu-section-button">Order Now</button>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-     <!-- payment section-->
-     
-     <div class="payment-section pb-5 pt-5">
+    <!-- reservation -->
+    <div class="reservation-section pb-5 pt-5"b id="reserve">
       <div class="container">
         <div class="row">
-          <div class="col-12 col-md-5 order1 order-md-2">
+          <div class="col-12 col-md-5 order2 order-md-1">
             <div class="text-center">
-              <img class="payment-section-img w-100" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1705132446/offer_dkormc.jpg" alt=""/>
+              <img class="reservation-section-img w-100" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1706699321/mobile-img_kjy9kk.png" alt=""/>
+              <p class="reservation">Food for thought with a seat at the table Secure your seats, savor every bite - reserve today!
+              Reserving a table means dining made hassle-free! Don't wait for luck - reserve your table asap.&#128523;</p>
             </div>
           </div>
-          <div class="col-12 col-md-7 order-2 order-md-1">
-            <h1 class="payment-section-heading">Delivery & Payment</h1>
-            <p class="payment-section-para">Enjoy hassle-free payment with the plenitude of payment options
-              available for you. Get live tracking and locate your food on a
-              live map. It's quite a sight to see your food arrive to your door.
-              Plus, you get a 5% discount on every order every time you pay 
-              online.</p>
-            <button class="payment-section-button">Order Now</button>
-            <div class="d-flex flex-row">
-              <img class="transaction-section-img mt-3 mr-3" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1705133247/upi_s8q9fp.png" alt=""/>
-              <img class="transaction-section-img mt-3 mr-3" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1705133302/MasterCard_Logo.svg_gyfvkw.png" alt=""/>
-              <img class="transaction-section-img mt-3 mr-3" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1705133247/visa_iymbh8.png" alt=""/>
-              <img class="transaction-section-img mt-3 mr-3" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1705133283/paypol_fjfxf5.png" alt=""/>
-              <img class="transaction-section-img mt-3 mr-3" src="https://res.cloudinary.com/dpfnyv0ut/image/upload/v1705133264/american_nc5dd7.jpg" alt="">
-            </div>
+          <div class="col-12 col-md-7 order-1 order-md-2 reservation">
+              <div class=" reservationform" >
+              <h1>Find Your Table&#128523;</h1>
+                  <form action="#" class="dotted-border" id="reset">
+                      <input required type="text" id="nameInput" placeholder="Name">
+                      <input required type="tel" id="contactInput" placeholder="Contact Number">
+                      <input required type="email" id="Email" placeholder="Email Address">
+                      <input required type="date" id="bookDate" placeholder="Book Date">
+                      <input required type="time" id="bookTime" placeholder="Time">
+                      <input required type="number" id="numberOfPeople" placeholder="Number of people">
+                      <textarea name="" id="" cols="10" rows="3" placeholder="Message Request"></textarea>
+                      <button type="button"  class="reservation-section-button" onclick="validateForm(event)">Book Now</button>
+                  </form>
+              </div>          
           </div>
         </div>
       </div>

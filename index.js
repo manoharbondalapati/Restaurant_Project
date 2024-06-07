@@ -50,7 +50,11 @@ function submitOrder(event){
     alert('select payment option');
     return false;
   }
-  alert("selected items:\nVeg item: " +VegStarters+"\nNonveg item:"+NonVegStarters+"\nBiryani item: "+Biryani+"\n Salad item:"+Salads+"\n Dessert item:"+Desserts+"\nChainese item:"+Chainese+"your address:"+address+"\n delivered with in 30minutes\n Thank You!!!..");
+  Swal.fire({
+    title: 'Order Submitted!',
+    text: ' Your order will be delivered within 30 minutes.\nThank you!',
+    icon: 'success',
+  });
   document.getElementById('formContainer').style.display = 'none';
   
   return true;
@@ -169,7 +173,11 @@ function validateForm(event) {
       return;
   }
 
-  alert("Your table booked successfully!");
+  Swal.fire({
+    title: 'Success!',
+    text: 'Your table booked successfully!',
+    icon: 'success',
+  });
  document.getElementById('reset').reset();
 }
 
@@ -215,36 +223,41 @@ const sc1 = ScrollReveal({origin:'top',distance:"40px",duration:2500});
 sc1.reveal(`.carousel-matter`, { interval: 500 });
   
 //payment
+document.querySelectorAll('.menu-section-button').forEach(button => {
+  button.addEventListener('click', async () => {
+    const response = await fetch('http://localhost:8080/create-checkout-session', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const session = await response.json();
 
-document.addEventListener("DOMContentLoaded", function() {
-  // Initialize Stripe
-  const stripe = Stripe('pk_test_51PKx8QSJqtr5veewViq9KUGKAq7YkAzpltvEP5YHpViyLssL1RJEZysyxxHRqpxXeSM6ObmCYOpSBM2nDk1I2Iy400r1UwxMJB'); // Replace with your Stripe publishable key
+    const stripe = Stripe('pk_test_51PKx8QSJqtr5veewViq9KUGKAq7YkAzpltvEP5YHpViyLssL1RJEZysyxxHRqpxXeSM6ObmCYOpSBM2nDk1I2Iy400r1UwxMJB'); // Replace with your Stripe public key
+    const { error } = await stripe.redirectToCheckout({ sessionId: session.id });
 
-  const buttons = document.getElementsByClassName('menu-section-button');
-  for (let button of buttons) {
-      button.addEventListener('click', async () => {
-          try {
-              const response = await fetch('http://localhost:4242/create-checkout-session', {
-                  method: 'POST',
-                  headers: {
-                      'Content-Type': 'application/json',
-                  },
-              });
-
-              const session = await response.json();
-              const result = await stripe.redirectToCheckout({ sessionId: session.id });
-
-              if (result.error) {
-                  alert(result.error.message);
-              }
-          } catch (error) {
-              console.error('Error:', error);
-          }
+    if (error) {
+      Swal.fire({
+        title: 'Payment failed',
+        text: error.message,
+        icon: 'error',
       });
-  }
-
-  // Success page handling
-  if (window.location.pathname === 'https://www.linkedin.com/feed/') {
-      alert('Order placed successfully!');
-  }
+    }
+  });
 });
+
+// Check for success or cancel parameters in the URL
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.has('success')) {
+  Swal.fire({
+    title: 'Good job!',
+    text: 'Order Placed Successfully',
+    icon: 'success'
+  });
+} else if (urlParams.has('cancel')) {
+  Swal.fire({
+    title: 'Cancelled',
+    text: 'You cancelled the transaction.',
+    icon: 'error'
+  });
+}
